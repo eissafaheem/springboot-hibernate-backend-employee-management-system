@@ -2,10 +2,12 @@ package com.EMS.employee_management_system.services;
 
 import com.EMS.employee_management_system.models.classes.*;
 
+import java.util.List;
+
 public interface EmployeeService {
-    public AllEmployeeResult getAllEmployee();
+    public List<Employee>  getAllEmployee();
     public AddEmployeeResult addEmployee(Employee newEmployee);
-    public UpdateEmployeeResult updateEmployee(Employee updateEmployeeRequest);
-    public DeleteEmployeeResult deleteEmployee(String id);
+    public Employee updateEmployee(Employee updateEmployeeRequest);
+    public Employee deleteEmployee(String id);
 
 }

@@ -1,26 +1,18 @@
 package com.EMS.employee_management_system.models.classes;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class AllEmployeeResult extends Result{
     public AllEmployeeResult() {
     }
-    Employee[] response;
+    List<Employee> response;
 
-    public Employee[] getResponse() {
+    public List<Employee> getResponse() {
         return response;
     }
 
-    public void setResponse(Employee[] response) {
+    public void setResponse(List<Employee> response) {
         this.response = response;
-    }
-
-    @Override
-    public String toString() {
-        return "AllEmployeeResult{" +
-                "response=" + Arrays.toString(response) +
-                ", errorCode=" + errorCode +
-                ", errorMessage='" + errorMessage + '\'' +
-                '}';
     }
 }
