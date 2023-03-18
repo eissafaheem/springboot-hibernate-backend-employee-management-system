@@ -1,8 +1,12 @@
 package com.EMS.employee_management_system.models.classes;
 
 import com.EMS.employee_management_system.models.interfaces.IEmployee;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+@Entity
 public class Employee implements IEmployee {
+    @Id
     String id;
     String name;
     String email;
