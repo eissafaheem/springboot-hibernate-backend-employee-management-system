@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
@@ -19,24 +20,27 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public AddEmployeeResult addEmployee(Employee newEmployee) {
+    public Employee addEmployee(Employee newEmployee) {
         Employee addedEmployee = employeeDao.save(newEmployee);
-        AddEmployeeResult a = new AddEmployeeResult();
-        a.setErrorCode(0);
-        a.setErrorMessage("Good Response");
-        a.setResponse(addedEmployee);
-        return a;
+        return addedEmployee;
     }
 
     @Override
     public Employee updateEmployee(Employee updateEmployeeRequest) {
 
-        return employeeDao.save(updateEmployeeRequest);
+        Employee updatedEmployee = employeeDao.save(updateEmployeeRequest);
+        return updatedEmployee;
     }
 
     @Override
     public Employee deleteEmployee(String id) {
         employeeDao.deleteById(id);
         return new Employee();
+    }
+
+    @Override
+    public boolean checkIfEmployeeExists(String id) {
+        Optional<Employee> optionalEmployee = employeeDao.findById(id);
+        return optionalEmployee.isPresent();
     }
 }
