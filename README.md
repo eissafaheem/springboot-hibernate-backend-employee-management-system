@@ -1,5 +1,7 @@
 # Spring Boot Hibernate EMS
 
+This project is used as backend rest apis for https://github.com/eissafaheem/angular-frontend-employee-management-system
+
 
 Fetch All Employees
 ![0 all emp](https://user-images.githubusercontent.com/68000460/227118412-39030831-c4f6-4569-a4bf-71fdbe19d536.png)
